@@ -25,6 +25,7 @@ class NativeTextStyle {
 
 class NativeAdmobOptions {
   final bool showMediaContent;
+  final String labelText;
   final Color ratingColor;
   final NativeTextStyle adLabelTextStyle;
   final NativeTextStyle headlineTextStyle;
@@ -36,6 +37,7 @@ class NativeAdmobOptions {
 
   const NativeAdmobOptions({
     this.showMediaContent = true,
+    this.labelText = "Ad",
     this.ratingColor = Colors.yellow,
     this.adLabelTextStyle = const NativeTextStyle(
       fontSize: 12,
@@ -71,6 +73,7 @@ class NativeAdmobOptions {
 
   Map<String, dynamic> toJson() => {
         "showMediaContent": this.showMediaContent,
+        "labelText": this.labelText,
         "ratingColor": "#${ratingColor.value.toRadixString(16)}",
         "adLabelTextStyle": adLabelTextStyle.toJson(),
         "headlineTextStyle": headlineTextStyle.toJson(),

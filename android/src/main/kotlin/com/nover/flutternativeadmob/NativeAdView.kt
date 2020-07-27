@@ -152,6 +152,8 @@ class NativeAdView @JvmOverloads constructor(
     }
     adAttribution.textSize = options.adLabelTextStyle.fontSize
     adAttribution.setTextColor(options.adLabelTextStyle.color)
+    adAttribution.setText(options.labelText)
+
     adAdvertiser.visibility = options.adLabelTextStyle.visibility
 
     adHeadline.setTextColor(options.headlineTextStyle.color)
