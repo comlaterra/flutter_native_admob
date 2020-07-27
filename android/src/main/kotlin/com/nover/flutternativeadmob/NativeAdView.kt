@@ -176,6 +176,10 @@ class NativeAdView @JvmOverloads constructor(
 
     callToAction.setTextColor(options.callToActionStyle.color)
     callToAction.textSize = options.callToActionStyle.fontSize
+    callToAction?.visibility = options.callToActionStyle.visibility
+    if (options.callToActionStyle.visibility == 0){
+      callToAction?.height = 0
+    }
     options.callToActionStyle.backgroundColor?.let {
       callToAction.setBackgroundColor(it)
     }
