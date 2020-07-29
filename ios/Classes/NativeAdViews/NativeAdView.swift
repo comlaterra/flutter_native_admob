@@ -287,7 +287,7 @@ private extension NativeAdView {
         
         adLabelLbl.textColor = options.adLabelTextStyle.color
         adLabelLbl.font = UIFont.systemFont(ofSize: options.adLabelTextStyle.fontSize)
-        adLabelView.backgroundColor = options.adLabelTextStyle.backgroundColor ?? .fromHex("FFCC66")
+        adLabelView.backgroundColor = options.adLabelTextStyle.backgroundColor ?? .fromHex("FFFFFF")
         adLabelView.isHidden = !options.adLabelTextStyle.isVisible
         
         adHeadLineLbl.textColor = options.headlineTextStyle.color

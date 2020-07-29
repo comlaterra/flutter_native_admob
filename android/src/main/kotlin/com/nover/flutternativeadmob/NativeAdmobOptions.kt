@@ -32,7 +32,7 @@ class NativeAdmobOptions(
     var showMediaContent: Boolean = true,
     var labelText: String = "Ad",
     var ratingColor: Int = Color.YELLOW,
-    val adLabelTextStyle: NativeTextStyle = NativeTextStyle(12f, Color.WHITE, Color.parseColor("#FFCC66")),
+    val adLabelTextStyle: NativeTextStyle = NativeTextStyle(12f, Color.WHITE),
     val headlineTextStyle: NativeTextStyle = NativeTextStyle(16f, Color.BLACK),
     val advertiserTextStyle: NativeTextStyle = NativeTextStyle(14f, Color.BLACK),
     val bodyTextStyle: NativeTextStyle = NativeTextStyle(12f, Color.GRAY),
