@@ -61,11 +61,8 @@ class NativeAdmobOptions {
       fontSize: 12,
       color: Colors.black,
     ),
-    this.callToActionStyle = const NativeTextStyle(
-      fontSize: 15,
-      color: Colors.white,
-      backgroundColor: Color(0xFF4CBE99),
-    ),
+    this.callToActionStyle =
+        const NativeTextStyle(fontSize: 15, color: Colors.white),
   });
 
   Map<String, dynamic> toJson() => {

@@ -7,12 +7,12 @@ import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.*
 import androidx.core.content.ContextCompat
 import com.google.android.gms.ads.formats.MediaView
 import com.google.android.gms.ads.formats.UnifiedNativeAd
 import com.google.android.gms.ads.formats.UnifiedNativeAdView
+
 
 enum class NativeAdmobType {
   full, banner
@@ -44,6 +44,7 @@ class NativeAdView @JvmOverloads constructor(
   private val adStore: TextView?
   private val adAttribution: TextView
   private val adLabelBackground: Drawable
+  private val buttonLabelBackground: Drawable
   private val callToAction: Button
 
   init {
@@ -71,6 +72,8 @@ class NativeAdView @JvmOverloads constructor(
 
     callToAction = adView.findViewById(R.id.ad_call_to_action)
     adLabelBackground = ContextCompat.getDrawable(context, R.drawable.ad_border)!!
+    buttonLabelBackground = ContextCompat.getDrawable(context, R.drawable.button_border)!!
+
 
 
     initialize()
@@ -152,8 +155,7 @@ class NativeAdView @JvmOverloads constructor(
         .setColorFilter(options.ratingColor, PorterDuff.Mode.SRC_ATOP)
 
     options.adLabelTextStyle.backgroundColor?.let {
-      adLabelBackground.setColorFilter(Color.parseColor("#343434"), PorterDuff.Mode.SRC_ATOP)
-//      adAttribution.background = it.toRoundedColor(3f)
+      adAttribution.getBackground().setColorFilter(it, PorterDuff.Mode.SRC_ATOP);
     }
     adAttribution.textSize = options.adLabelTextStyle.fontSize
     adAttribution.setTextColor(options.adLabelTextStyle.color)
@@ -188,7 +190,7 @@ class NativeAdView @JvmOverloads constructor(
       callToAction?.height = 0
     }
     options.callToActionStyle.backgroundColor?.let {
-      callToAction.setBackgroundColor(it)
+      callToAction.getBackground().setColorFilter(it, PorterDuff.Mode.SRC_ATOP);
     }
   }
 }
