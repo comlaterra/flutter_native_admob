@@ -3,11 +3,13 @@ package com.nover.flutternativeadmob
 import android.content.Context
 import android.graphics.Color
 import android.graphics.PorterDuff
+import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.content.ContextCompat
 import com.google.android.gms.ads.formats.MediaView
 import com.google.android.gms.ads.formats.UnifiedNativeAd
 import com.google.android.gms.ads.formats.UnifiedNativeAdView
@@ -41,6 +43,7 @@ class NativeAdView @JvmOverloads constructor(
   private val adPrice: TextView?
   private val adStore: TextView?
   private val adAttribution: TextView
+  private val adLabelBackground: Drawable
   private val callToAction: Button
 
   init {
@@ -66,8 +69,9 @@ class NativeAdView @JvmOverloads constructor(
 
     ratingBar = adView.findViewById(R.id.ad_stars)
 
-    adAttribution.background = Color.parseColor("#FFCC66").toRoundedColor(3f)
     callToAction = adView.findViewById(R.id.ad_call_to_action)
+    adLabelBackground = ContextCompat.getDrawable(context, R.drawable.ad_border)!!
+
 
     initialize()
   }
@@ -148,7 +152,8 @@ class NativeAdView @JvmOverloads constructor(
         .setColorFilter(options.ratingColor, PorterDuff.Mode.SRC_ATOP)
 
     options.adLabelTextStyle.backgroundColor?.let {
-      adAttribution.background = it.toRoundedColor(3f)
+      adLabelBackground.setColorFilter(Color.parseColor("#343434"), PorterDuff.Mode.SRC_ATOP)
+//      adAttribution.background = it.toRoundedColor(3f)
     }
     adAttribution.textSize = options.adLabelTextStyle.fontSize
     adAttribution.setTextColor(options.adLabelTextStyle.color)

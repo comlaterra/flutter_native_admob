@@ -39,11 +39,8 @@ class NativeAdmobOptions {
     this.showMediaContent = true,
     this.labelText = "Ad",
     this.ratingColor = Colors.yellow,
-    this.adLabelTextStyle = const NativeTextStyle(
-      fontSize: 12,
-      color: Colors.white,
-      backgroundColor: Color(0xFFFFCC66),
-    ),
+    this.adLabelTextStyle =
+        const NativeTextStyle(fontSize: 12, color: Colors.white),
     this.headlineTextStyle = const NativeTextStyle(
       fontSize: 16,
       color: Colors.black,
