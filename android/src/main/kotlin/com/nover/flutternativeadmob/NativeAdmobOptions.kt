@@ -30,6 +30,7 @@ class NativeTextStyle(
 
 class NativeAdmobOptions(
     var showMediaContent: Boolean = true,
+    var labelText: String = "Ad",
     var ratingColor: Int = Color.YELLOW,
     val adLabelTextStyle: NativeTextStyle = NativeTextStyle(12f, Color.WHITE, Color.parseColor("#FFCC66")),
     val headlineTextStyle: NativeTextStyle = NativeTextStyle(16f, Color.BLACK),
@@ -46,6 +47,10 @@ class NativeAdmobOptions(
 
       (data["showMediaContent"] as? Boolean)?.let {
         bannerOptions.showMediaContent = it
+      }
+
+      (data["labelText"] as? String)?.let {
+        bannerOptions.labelText = it
       }
 
       (data["ratingColor"] as? String)?.let {
