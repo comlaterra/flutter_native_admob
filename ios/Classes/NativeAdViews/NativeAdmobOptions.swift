@@ -44,6 +44,7 @@ struct NativeAdmobOptions {
     var storeTextStyle = NativeTextStyle(fontSize: 12, color: .black)
     var priceTextStyle = NativeTextStyle(fontSize: 12, color: .black)
     var callToActionStyle = NativeTextStyle(fontSize: 15, color: .white, backgroundColor: .fromHex("#4CBE99"))
+    var adLabelText = "Ad"
     
     init() {}
     
@@ -82,6 +83,9 @@ struct NativeAdmobOptions {
         
         if let data = data["callToActionStyle"] as? [String: Any] {
             callToActionStyle.update(JSON: data)
+        }
+        if let adLabelText = data["labelText"] as? String {
+            self.adLabelText = adLabelText
         }
     }
 }

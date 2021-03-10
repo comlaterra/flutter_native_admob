@@ -100,7 +100,7 @@ class NativeAdView: GADUnifiedNativeAdView {
     var options = NativeAdmobOptions() {
         didSet { updateOptions() }
     }
-    
+
     let type: NativeAdmobType
     
     init(frame: CGRect, type: NativeAdmobType) {
@@ -285,6 +285,7 @@ private extension NativeAdView {
     func updateOptions() {
         adMediaView.isHidden = !options.showMediaContent
         
+        adLabelLbl.text = options.adLabelText
         adLabelLbl.textColor = options.adLabelTextStyle.color
         adLabelLbl.font = UIFont.systemFont(ofSize: options.adLabelTextStyle.fontSize)
         adLabelView.backgroundColor = options.adLabelTextStyle.backgroundColor ?? .fromHex("FFFFFF")
